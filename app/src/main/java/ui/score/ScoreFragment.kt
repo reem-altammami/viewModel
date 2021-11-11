@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import com.example.viewmodel.R
 import com.example.viewmodel.databinding.FragmentScoreBinding
@@ -33,7 +34,12 @@ private var _binding : FragmentScoreBinding? = null
             binding.score.text = scoreView.getScoreAddingOnePoint().toString()
         }
         binding.sub2.setOnClickListener {
-            binding.score.text = scoreView.getScoreSubtractingTwoPoint().toString()
+            if (scoreView.score > 2) {
+                binding.score.text = scoreView.getScoreSubtractingTwoPoint().toString()
+            } else {
+                val toast = Toast.makeText(this.requireContext(),"Score should not less than zero",Toast.LENGTH_LONG)
+                toast.show()
+            }
 
         }
         binding.add4.setOnClickListener {

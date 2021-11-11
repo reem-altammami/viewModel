@@ -19,12 +19,10 @@ class ScoreViewModel : ViewModel(){
     }
 
      fun getScoreSubtractingTwoPoint() : Int{
-        if (_score > 1) {
+
             _score -= 2
-        }
-        else {
-            _score = 0
-        }
+
+
          return _score
     }
 }
