@@ -34,7 +34,7 @@ private var _binding : FragmentScoreBinding? = null
             binding.score.text = scoreView.getScoreAddingOnePoint().toString()
         }
         binding.sub2.setOnClickListener {
-            if (scoreView.score > 2) {
+            if (scoreView.score >= 2) {
                 binding.score.text = scoreView.getScoreSubtractingTwoPoint().toString()
             } else {
                 val toast = Toast.makeText(this.requireContext(),"Score should not less than zero",Toast.LENGTH_LONG)
